@@ -1,4 +1,5 @@
 {
   "port" : 8000,
-  "environment": "development"
+  "environment": "development",
+  "jwt_key" : "pruebasre"
 }

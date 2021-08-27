@@ -1,15 +1,13 @@
-const Config = require('config');
 const jwt = require('jsonwebtoken');
-
-let config = Config;
+const jwt_key = process.env.JWT_KEY;
 
 function createToken(payload){
-    return jwt.sign(payload, config.jwt_key);
+    return jwt.sign(payload, jwt_key);
 }
 
 function verifyToken(token){
     try{
-        return jwt.verify(token, config.jwt_key);
+        return jwt.verify(token, jwt_key);
     }catch (err){
         return false;
     }

@@ -1,4 +1,12 @@
 {
   "port" : 8000,
-  "environment": "development"
+  "environment": "development",
+  "db": {
+    "host": "bootcamp-tht.sre.wize.mx",
+    "user": "secret",
+    "password": "noPow3r",
+    "port": "3306",
+    "database": "bootcamp_tht"
+  },
+  "jwt_key" : "pruebasre"
 }

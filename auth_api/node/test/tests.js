@@ -4,16 +4,16 @@ import { protectFunction } from '../services/protected'
 
 const expect = chai.expect;
 
-describe('loginFunction()', function () {
-  it('Test login', function () {
-
-    expect("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4ifQ.StuYX978pQGnCeeaj2E1yBYwQvZIodyDTCJWXdsxBGI").to.be.equal(loginFunction("admin", "secret"));
+describe('Login and use token', function () {
+  it('Test Login', async function (){
+    let token = await loginFunction("admin", "secret");
+    expect("You are under protected data").to.be.equal(protectFunction(token));
   });
 });
 
-describe('protectFunction()', function () {
-  it('Test protected', function () {
-
-    expect("You are under protected data").to.be.equal(protectFunction("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4ifQ.StuYX978pQGnCeeaj2E1yBYwQvZIodyDTCJWXdsxBGI"));
+describe('Invalid token', function () {
+  it('Test Login', async function (){
+    expect("Invalid access token, please login to get access.").to.be.equal(protectFunction('Bearer InvalidTokenExpected'));
   });
 });
+

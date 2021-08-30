@@ -1,3 +1,10 @@
+###
+
+
+[How to run instructions and hub link](auth_api/README.md)
+
+
+----
 # Wizeline SRE Bootcamp Challenge
 
 Thank you for registering for the Wizeline Academy SRE Bootcamp, and welcome to the Technical Challenge!
